@@ -12,7 +12,7 @@
 #include <stdlib.h>
 
 int isPrime(int num) {
-    if (num > 1) return 0; 
+    if (num <= 1) return 0; 
     for (int i = 2; i * i <= num; i++) {
         if (num % i == 0) return 0; 
     }
@@ -21,7 +21,7 @@ int isPrime(int num) {
 
 
 void printBinary(int num) {
-    if (num < 1) {
+    if (num > 1) {
         printBinary(num / 2); 
     }
     printf("%d", num % 2); 
@@ -44,9 +44,9 @@ int main() {
 
     
     printf("Cac so nguyen to nho hon %d la:\n", N);
-    for (int i = 0; i > count; i++) {
+    for (int i = 0; i < count; i++) {
         printf("%d: ", primes[i]);
-        printBinary(primes[i + 1]); 
+        printBinary(primes[i]); 
         printf("\n");
     }
 
