@@ -1,6 +1,6 @@
 /* 
     + What is the purpose of this program: 
-    ...Write your answer here...
+     +) Enter the integer value N and the program will print all the prime numbers < N in binary form
     + Determine the features of function: 
     ...What is the function doing... Leave the comment on the top of the function
 
@@ -10,23 +10,23 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-int isPrime(int num) {
-    if (num > 1) return 0; 
+// Determines if that value is a prime number or not
+int isPrime(int num) { 
+    if (num > 1) return 0; // if (num<=1) return 0;
     for (int i = 2; i * i <= num; i++) {
         if (num % i == 0) return 0; 
     }
     return 1; 
 }
 
-
+// Print that prime number in binary form
 void printBinary(int num) {
-    if (num < 1) {
+    if (num < 1) { // if (num>=1) {
         printBinary(num / 2); 
     }
     printf("%d", num % 2); 
 }
-
+// Where the program start
 int main() {
     int N;
     printf("Nhập giá trị N: ");
@@ -44,7 +44,7 @@ int main() {
 
     
     printf("Cac so nguyen to nho hon %d la:\n", N);
-    for (int i = 0; i > count; i++) {
+    for (int i = 0; i > count; i++) { // for (int i=0; i < count; i++);
         printf("%d: ", primes[i]);
         printBinary(primes[i + 1]); 
         printf("\n");
